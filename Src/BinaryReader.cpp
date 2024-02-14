@@ -27,7 +27,7 @@ BinaryReader::BinaryReader(_In_z_ wchar_t const* fileName) noexcept(false) :
     {
         DebugTrace("ERROR: BinaryReader failed (%08X) to load '%ls'\n",
             static_cast<unsigned int>(hr), fileName);
-        throw std::runtime_error("BinaryReader");
+        throw std::runtime_error("BinaryReader failed to load file");
     }
 
     mPos = mOwnedData.get();
